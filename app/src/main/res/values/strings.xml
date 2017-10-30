@@ -13,4 +13,9 @@
     <string name="FavouriteText">FavouriteFragment</string>
     <string name="textNotif">NotificationsFragment</string>
     <string name="android_studio">Header</string>
+    <string name="title_activity_tab">TabActivity</string>
+    <string name="tab_text_1">В прокате</string>
+    <string name="tab_text_2">Популярное</string>
+
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>
