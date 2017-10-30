@@ -3,6 +3,7 @@ package com.example.user.phimovies.Main;
 import android.os.Bundle;
 
 
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 
 import android.support.design.widget.NavigationView;
@@ -54,11 +55,11 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         Fragment fragment = null;
-        Class fragmentClass = null;
+        Class fragmentClass;
         switch (id)
         {
             case R.id.home_page:
