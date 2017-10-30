@@ -1,4 +1,4 @@
-package com.example.user.phimovies.Main;
+package com.example.user.phimovies.main;
 
 import android.os.Bundle;
 
@@ -16,11 +16,10 @@ import android.support.v7.widget.Toolbar;
 
 import android.view.MenuItem;
 
+import com.example.user.phimovies.favourites.FavouriteFragment;
+import com.example.user.phimovies.home.MainFragment;
+import com.example.user.phimovies.notifications.NotificationsFragment;
 import com.example.user.phimovies.R;
-
-import Fragments.FavouriteFragment;
-import Fragments.MainFragment;
-import Fragments.NotificationsFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

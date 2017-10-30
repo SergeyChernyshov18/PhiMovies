@@ -1,4 +1,4 @@
-package Fragments;
+package com.example.user.phimovies.notifications;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
