@@ -3,6 +3,7 @@ package com.example.user.phimovies;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -62,13 +63,14 @@ public class FirstTabFragment extends Fragment {
         // use a linear layout manager
         //mLayoutManager = new LinearLayoutManager(getActivity());
        // mRecyclerView.setLayoutManager(mLayoutManager);
-        StaggeredGridLayoutManager gridLayoutManager =
-                new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        GridLayoutManager gridLayoutManager =
+                new GridLayoutManager(getContext(),2);
 // Attach the layout manager to the recycler view
         mRecyclerView.setLayoutManager(gridLayoutManager);
        // List<String> items = new ArrayList<>();
         String names[] = {"Петя","Вася","Паша","Коля"};
         String surnames[] = {"Иванцов","Купцов","Никулин","Павличенко"};
+        String photo[] = {"https://cdnimg.rg.ru/img/content/138/83/88/1_d_850.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO9769VCMzOZngytdMBmCJTlyV14UxcnChZ8R3CAnBVIJpAUOT","http://podrobnosti.ua/media/pictures/2016/1/16/thumbs/740x415/di-kaprio-javljaetsja-na-opredelennuju-dolju-russkim_rect_73964f9ad23fe44bdccc31d53472a745.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIP12nh-Hkb-dCVrQ_NY8okOeuYQ0v-ikL4md8SDKHtc2f4hWb6A"};
         Men1 humans[] = new Men1[4];
         List<Men1> mens = new ArrayList<>();
         for (int i = 0; i<humans.length;i++)
@@ -76,6 +78,7 @@ public class FirstTabFragment extends Fragment {
             humans[i]= new Men1();
             humans[i].setFirstname(names[i]);
             humans[i].setLastname(surnames[i]);
+            humans[i].setPhoto(photo[i]);
             mens.add(humans[i]);
         }
         // specify an adapter (see also next example)

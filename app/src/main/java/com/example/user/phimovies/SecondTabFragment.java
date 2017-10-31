@@ -10,8 +10,8 @@ import android.widget.TextView;
 public class SecondTabFragment extends Fragment {
     private String title;
     private int page;
-    public static FirstTabFragment newInstance(int page, String title) {
-        FirstTabFragment fragmentSecond = new FirstTabFragment();
+    public static SecondTabFragment newInstance(int page, String title) {
+        SecondTabFragment fragmentSecond = new SecondTabFragment();
         Bundle args = new Bundle();
         args.putInt("someInt", page);
         args.putString("someTitle", title);

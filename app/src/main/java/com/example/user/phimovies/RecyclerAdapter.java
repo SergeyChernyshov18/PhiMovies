@@ -4,10 +4,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.user.phimovies.Users.Men1;
+import com.facebook.drawee.view.SimpleDraweeView;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,6 +42,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         // - replace the contents of the view with that element
         holder.firstname.setText(mDataset.get(position).getFirstname());
         holder.lastname.setText(mDataset.get(position).getLastname());
+        holder.photo.setImageURI(mDataset.get(position).getPhoto());
     }
 
     // Return the size of your dataset (invoked by the layout manager)
@@ -56,10 +60,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         // each data item is just a string in this case
         public TextView firstname;
         public TextView lastname;
+        public SimpleDraweeView photo;
         public ViewHolder(View v) {
             super(v);
             firstname = v.findViewById(R.id.firstname);
             lastname = v.findViewById(R.id.lastname);
+            photo = v.findViewById(R.id.photo);
         }
     }
 
