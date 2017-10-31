@@ -6,15 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.user.phimovies.Users.Men1;
+
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by User on 30.10.2017.
- */
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
-    private List<String> mDataset = new ArrayList<>();
+    private List<Men1> mDataset = new ArrayList<>();
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -26,7 +25,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                                                    int viewType) {
         // create a new view
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.layout_recycler_item, parent, false);
+                .inflate(R.layout.layout_recycler_item1, parent, false);
         // set the view's size, margins, paddings and layout parameters
 
         ViewHolder vh = new ViewHolder(v);
@@ -38,8 +37,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.mTextView.setText(mDataset.get(position));
-
+        holder.firstname.setText(mDataset.get(position).getFirstname());
+        holder.lastname.setText(mDataset.get(position).getLastname());
     }
 
     // Return the size of your dataset (invoked by the layout manager)
@@ -48,17 +47,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         return mDataset.size();
     }
 
-    public void addAll(List<String> items) {
+    public void addAll(List<Men1> items) {
         mDataset.addAll(items);
         notifyDataSetChanged();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
-        public TextView mTextView;
+        public TextView firstname;
+        public TextView lastname;
         public ViewHolder(View v) {
             super(v);
-            mTextView = v.findViewById(R.id.tv3);
+            firstname = v.findViewById(R.id.firstname);
+            lastname = v.findViewById(R.id.lastname);
         }
     }
 

@@ -5,6 +5,25 @@ package com.example.user.phimovies.Users;
  */
 
 public class Men1 {
-    public String name = "Петя";
-    public String lastname = "Прушкин";
+    protected String firstname;
+    protected String lastname;
+    public void setFirstname (String fname)
+    {
+        firstname = fname;
+    }
+    public void setLastname (String lname)
+    {
+        lastname = lname;
+    }
+    public String getFirstname ()
+    {
+        return firstname;
+    }
+    public String getLastname ()
+    {
+        return lastname;
+    }
+    public Men1 ()
+    {
+    }
 }
