@@ -4,39 +4,40 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-/**
- * Created by User on 30.10.2017.
- */
+
 
 public class MyPagerAdapter extends FragmentPagerAdapter {
     private static int NUM_ITEMS = 2;
 
-    public MyPagerAdapter(FragmentManager fragmentManager) {
+    public MyPagerAdapter(FragmentManager fragmentManager)
+    {
         super(fragmentManager);
     }
 
-    // Returns total number of pages
     @Override
-    public int getCount() {
+    public int getCount()
+    {
         return NUM_ITEMS;
     }
 
-    // Returns the fragment to display for that page
     @Override
-    public Fragment getItem(int position) {
-        switch (position) {
+    public Fragment getItem(int position)
+    {
+        switch (position)
+        {
             case 0:
-                return FirstTabFragment.newInstance(0, "Page # 1");
+                return FirstTabFragment.newInstance(0, "В прокате");
             case 1:
-                return SecondTabFragment.newInstance(1, "Page # 2");
+                return SecondTabFragment.newInstance(1, "Популярное");
             default:
-                return null;
+                return FirstTabFragment.newInstance(0, "В прокате");
         }
     }
 
     // Returns the page title for the top indicator
     @Override
-    public CharSequence getPageTitle(int position) {
+    public CharSequence getPageTitle(int position)
+    {
         return "Page " + position;
     }
 

@@ -30,9 +30,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -56,10 +53,10 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
+
         Fragment fragment = null;
         Class fragmentClass;
-        switch (id)
+        switch (item.getItemId())
         {
             case R.id.home_page:
             {
@@ -76,7 +73,10 @@ public class MainActivity extends AppCompatActivity
                 fragmentClass = NotificationsFragment.class;
                 break;
             }
-            default:fragmentClass = MainFragment.class;
+            default: {
+                fragmentClass = MainFragment.class;
+                break;
+            }
         }
         try {
             fragment = (Fragment) fragmentClass.newInstance();
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity
                 .beginTransaction()
                 .replace(R.id.flContent, fragment)
                 .commit();
-
+        item.setChecked(true);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

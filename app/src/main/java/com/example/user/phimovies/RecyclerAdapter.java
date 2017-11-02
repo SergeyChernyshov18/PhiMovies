@@ -40,8 +40,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.firstname.setText(mDataset.get(position).getFirstname());
-        holder.lastname.setText(mDataset.get(position).getLastname());
+        //holder.firstname.setText(mDataset.get(position).getFirstname());
+       // holder.lastname.setText(mDataset.get(position).getLastname());
         holder.photo.setImageURI(mDataset.get(position).getPhoto());
     }
 
@@ -63,8 +63,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         public SimpleDraweeView photo;
         public ViewHolder(View v) {
             super(v);
-            firstname = v.findViewById(R.id.firstname);
-            lastname = v.findViewById(R.id.lastname);
+            //firstname = v.findViewById(R.id.firstname);
+            //lastname = v.findViewById(R.id.lastname);
             photo = v.findViewById(R.id.photo);
         }
     }

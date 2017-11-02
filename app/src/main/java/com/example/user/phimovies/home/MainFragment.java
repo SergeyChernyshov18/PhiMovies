@@ -27,8 +27,6 @@ public class MainFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         pager = view.findViewById(R.id.vpPager);
         tabs = view.findViewById(R.id.tabs);
-
-
     }
 
     @Override
